@@ -1,0 +1,106 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red173\green199\blue225;
+\red194\green192\blue180;\red251\green154\blue80;\red251\green197\blue92;\red236\green138\blue94;\red218\green177\blue255;
+\red134\green227\blue190;\red203\green255\blue105;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c99985;\cssrgb\c73022\c82127\c90603;
+\cssrgb\c80410\c79605\c75867;\cssrgb\c99394\c66946\c38355;\cssrgb\c99237\c80932\c43322;\cssrgb\c94635\c61454\c44272;\cssrgb\c88584\c76093\c100000;
+\cssrgb\c58335\c90201\c79093;\cssrgb\c82850\c99159\c48607;}
+\margl1440\margr1440\vieww21280\viewh22220\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\i\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 // Create a function that accepts a string  as a parameter then returns the LONGEST palindrome in that string.  A Palindrome is  a word, phrase, or sequence that reads the same backward as forward, e.g., madam, or nurses run. Punctuation marks can be ignored.
+\f1\i0 \cb3 \strokec5 \
+\
+
+\f0\i \cb3 \strokec4 //since js file is not supported in gdrive. Here's the jsfiddle link: https://jsfiddle.net/pLghrwz6/
+\f1\i0 \cb3 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec6 const\cb3 \strokec5  \cb3 \strokec7 isPalindrome\cb3 \strokec5  \cb3 \strokec8 =\cb3 \strokec5  (\cb3 \strokec9 word\cb3 \strokec5 ) \cb3 \strokec6 =>\cb3 \strokec5  \{\
+  \cb3 \strokec6 let\cb3 \strokec5  formatWord \cb3 \strokec8 =\cb3 \strokec5  \cb3 \strokec9 word\cb3 \strokec8 .\cb3 \strokec7 match\cb3 \strokec5 (\cb3 \strokec10 /\cb3 \strokec6 \\b\cb3 \strokec10 (\\w\cb3 \strokec8 +\cb3 \strokec10 )\cb3 \strokec6 \\b\cb3 \strokec10 /\cb3 \strokec6 g\cb3 \strokec5 );\
+  formatWord \cb3 \strokec8 =\cb3 \strokec5  formatWord\cb3 \strokec8 .\cb3 \strokec7 join\cb3 \strokec5 (\cb3 \strokec11 ""\cb3 \strokec5 )\cb3 \strokec8 .\cb3 \strokec7 toLowerCase\cb3 \strokec5 ();\
+\
+  \cb3 \strokec6 const\cb3 \strokec5  reverse \cb3 \strokec8 =\cb3 \strokec5  formatWord\cb3 \strokec8 .\cb3 \strokec7 split\cb3 \strokec5 (\cb3 \strokec11 ""\cb3 \strokec5 )\cb3 \strokec8 .\cb3 \strokec7 reverse\cb3 \strokec5 ()\cb3 \strokec8 .\cb3 \strokec7 join\cb3 \strokec5 (\cb3 \strokec11 ""\cb3 \strokec5 )\cb3 \strokec8 .\cb3 \strokec7 toLowerCase\cb3 \strokec5 ();\
+\
+  \cb3 \strokec6 return\cb3 \strokec5  formatWord \cb3 \strokec8 ===\cb3 \strokec5  reverse;\
+\};\
+\
+\cb3 \strokec6 const\cb3 \strokec5  \cb3 \strokec7 getLongestPalindrome\cb3 \strokec5  \cb3 \strokec8 =\cb3 \strokec5  (\cb3 \strokec9 sentence\cb3 \strokec5 ) \cb3 \strokec6 =>\cb3 \strokec5  \{\
+  \cb3 \strokec6 let\cb3 \strokec5  formatSentence \cb3 \strokec8 =\cb3 \strokec5  \cb3 \strokec9 sentence\cb3 \strokec8 .\cb3 \strokec7 match\cb3 \strokec5 (\cb3 \strokec10 /\cb3 \strokec6 \\b\cb3 \strokec10 (\\w\cb3 \strokec8 +\cb3 \strokec10 )\cb3 \strokec6 \\b\cb3 \strokec10 /\cb3 \strokec6 g\cb3 \strokec5 );\
+  console\cb3 \strokec8 .\cb3 \strokec7 log\cb3 \strokec5 (\{ formatSentence \});\
+  \cb3 \strokec6 let\cb3 \strokec5  sentenceLength \cb3 \strokec8 =\cb3 \strokec5  formatSentence\cb3 \strokec8 .\cb3 \strokec5 length;\
+\
+  \cb3 \strokec6 let\cb3 \strokec5  palindromes \cb3 \strokec8 =\cb3 \strokec5  [];\
+  \cb3 \strokec6 let\cb3 \strokec5  palindromeLengths \cb3 \strokec8 =\cb3 \strokec5  [];\
+\
+  
+\f0\i \cb3 \strokec4 //check whole sentence
+\f1\i0 \cb3 \strokec5 \
+  \cb3 \strokec6 if\cb3 \strokec5  (\cb3 \strokec7 isPalindrome\cb3 \strokec5 (\cb3 \strokec9 sentence\cb3 \strokec5 )) \{\
+    \cb3 \strokec6 return\cb3 \strokec5  \cb3 \strokec9 sentence\cb3 \strokec5 ;\
+  \}\
+\
+  
+\f0\i \cb3 \strokec4 //check per word
+\f1\i0 \cb3 \strokec5 \
+  \cb3 \strokec6 for\cb3 \strokec5  (\cb3 \strokec6 let\cb3 \strokec5  i \cb3 \strokec8 =\cb3 \strokec5  \cb3 \strokec9 0\cb3 \strokec5 ; i \cb3 \strokec8 <\cb3 \strokec5  sentenceLength; i\cb3 \strokec8 ++\cb3 \strokec5 ) \{\
+    
+\f0\i \cb3 \strokec4 //check every word
+\f1\i0 \cb3 \strokec5 \
+    \cb3 \strokec6 if\cb3 \strokec5  (\cb3 \strokec7 isPalindrome\cb3 \strokec5 (formatSentence[i])) \{\
+      \cb3 \strokec6 if\cb3 \strokec5  (formatSentence[i]\cb3 \strokec8 .\cb3 \strokec5 length \cb3 \strokec8 >\cb3 \strokec5  \cb3 \strokec9 1\cb3 \strokec5 ) \{\
+        palindromes\cb3 \strokec8 .\cb3 \strokec7 push\cb3 \strokec5 (\{\
+          word: formatSentence[i],\
+          indexFrom: i,\
+          indexTo: \cb3 \strokec9 null\cb3 \strokec5 ,\
+        \});\
+      \}\
+    \}\
+\
+    
+\f0\i \cb3 \strokec4 //check every word but with greater scope
+\f1\i0 \cb3 \strokec5 \
+    \cb3 \strokec6 for\cb3 \strokec5  (\cb3 \strokec6 let\cb3 \strokec5  j \cb3 \strokec8 =\cb3 \strokec5  \cb3 \strokec9 0\cb3 \strokec5 ; j \cb3 \strokec8 <\cb3 \strokec5  sentenceLength; j\cb3 \strokec8 ++\cb3 \strokec5 ) \{\
+      \cb3 \strokec6 if\cb3 \strokec5  (j \cb3 \strokec8 >\cb3 \strokec5  i) \{\
+        \cb3 \strokec6 let\cb3 \strokec5  scopedSentence \cb3 \strokec8 =\cb3 \strokec5  [];\
+        \cb3 \strokec6 for\cb3 \strokec5  (\cb3 \strokec6 let\cb3 \strokec5  k \cb3 \strokec8 =\cb3 \strokec5  i; k \cb3 \strokec8 <=\cb3 \strokec5  j; k\cb3 \strokec8 ++\cb3 \strokec5 ) \{\
+          scopedSentence\cb3 \strokec8 .\cb3 \strokec7 push\cb3 \strokec5 (formatSentence[k]);\
+        \}\
+        \cb3 \strokec6 let\cb3 \strokec5  newScopedSentence \cb3 \strokec8 =\cb3 \strokec5  scopedSentence\cb3 \strokec8 .\cb3 \strokec7 join\cb3 \strokec5 (\cb3 \strokec11 " "\cb3 \strokec5 );\
+        \cb3 \strokec6 if\cb3 \strokec5  (\cb3 \strokec7 isPalindrome\cb3 \strokec5 (newScopedSentence)) \{\
+          palindromes\cb3 \strokec8 .\cb3 \strokec7 push\cb3 \strokec5 (\{\
+            word: newScopedSentence,\
+            indexFrom: i,\
+            indexTo: j,\
+          \});\
+        \}\
+      \}\
+    \}\
+  \}\
+\
+  \cb3 \strokec6 for\cb3 \strokec5  (\cb3 \strokec6 let\cb3 \strokec5  i \cb3 \strokec8 =\cb3 \strokec5  \cb3 \strokec9 0\cb3 \strokec5 ; i \cb3 \strokec8 <\cb3 \strokec5  palindromes\cb3 \strokec8 .\cb3 \strokec5 length; i\cb3 \strokec8 ++\cb3 \strokec5 ) \{\
+    palindromeLengths\cb3 \strokec8 .\cb3 \strokec7 push\cb3 \strokec5 (palindromes[i]\cb3 \strokec8 .\cb3 \strokec5 word\cb3 \strokec8 .\cb3 \strokec5 length);\
+  \}\
+\
+  
+\f0\i \cb3 \strokec4 //get highest number
+\f1\i0 \cb3 \strokec5 \
+  \cb3 \strokec6 const\cb3 \strokec5  max \cb3 \strokec8 =\cb3 \strokec5  Math\cb3 \strokec8 .\cb3 \strokec7 max\cb3 \strokec5 (\cb3 \strokec8 ...\cb3 \strokec5 palindromeLengths);\
+  \cb3 \strokec6 const\cb3 \strokec5  index \cb3 \strokec8 =\cb3 \strokec5  palindromeLengths\cb3 \strokec8 .\cb3 \strokec7 indexOf\cb3 \strokec5 (max);\
+\
+  
+\f0\i \cb3 \strokec4 //return longest word
+\f1\i0 \cb3 \strokec5 \
+  \cb3 \strokec6 return\cb3 \strokec5  palindromes[index]\cb3 \strokec8 .\cb3 \strokec5 word;\
+\};\
+\
+console\cb3 \strokec8 .\cb3 \strokec7 log\cb3 \strokec5 (\{\
+  LongestPalindrome: \cb3 \strokec7 getLongestPalindrome\cb3 \strokec5 (\
+    \cb3 \strokec11 "Hello will you please rise to vote, sir George"\cb3 \strokec5 \
+  ),\
+\});\
+\
+}
